@@ -58,3 +58,5 @@ function stageProgress(){const stages=[['srs','SRS'],['baseline','Baseline'],['r
 const overviewWithProgress=projectNextPanel;
 projectNextPanel=function(){return overviewWithProgress().replace('<div class="completion-metrics">',''+stageProgress()+'<div class="completion-metrics">');};
 render();
+const navigateWithScrollReset=navigate;
+navigate=function(...args){navigateWithScrollReset(...args);setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),0);};

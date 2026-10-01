@@ -15,3 +15,8 @@ button,.button,a.button{transition:transform .18s ease,box-shadow .18s ease,back
 /* Fix control-center eyebrow spacing */
 .completion-overview{padding-top:64px}.completion-overview:before{top:18px;left:24px}.completion-overview>div:first-of-type{min-width:170px}
 @media(max-width:900px){.completion-overview{padding-top:50px}.completion-overview:before{top:16px;left:22px}}
+/* Architecture workspace clarity */
+.architecture-explorer{background:#fff;box-shadow:0 12px 28px rgba(35,62,122,.08)}
+.architecture-workbench{background:#f8faff;min-height:510px}.architecture-canvas-column{background:#f3f7fd}.architecture-inspector{background:#fff;border-left:1px solid #cfd9e8;box-shadow:-8px 0 20px rgba(40,67,111,.05)}
+.architecture-canvas-toolbar{background:#fff;position:sticky;top:0;z-index:2}.architecture-viewport{scrollbar-width:thin;scrollbar-color:#a9b8ce #edf2f9}.architecture-viewport::-webkit-scrollbar{width:10px;height:10px}.architecture-viewport::-webkit-scrollbar-thumb{background:#a9b8ce;border-radius:999px;border:3px solid #edf2f9}.architecture-viewport::-webkit-scrollbar-track{background:#edf2f9}
+@media(max-width:1100px){.architecture-inspector{box-shadow:none}.architecture-workbench{min-height:0}}
