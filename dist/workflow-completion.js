@@ -54,3 +54,7 @@ projectNextPanel=function(){return overviewBeforeAudit().replace('</section>','<
 render();
 const completionMatrixPage=blueprintPageRoutes.traceability;
 blueprintPageRoutes.traceability=function(){return actionsAtTop(completionMatrixPage(),'traceability');};
+function stageProgress(){const stages=[['srs','SRS'],['baseline','Baseline'],['requirements','Requirements'],['stories','Stories'],['timeline','Timeline'],['architecture','Architecture'],['tests','Tests'],['quality','QA']];const next=nextProjectAction().route;return '<div class="stage-progress" aria-label="Project progress">'+stages.map(([route,label],i)=>{const active=route===next;const done=stages.findIndex(s=>s[0]===next)>i;return '<button type="button" class="stage-step '+(active?'is-active ':'')+(done?'is-done':'')+'" onclick="navigate(\''+route+'\')"><span>'+(done?'✓':i+1)+'</span><small>'+label+'</small></button>'}).join('<i aria-hidden="true">›</i>')+'</div>';}
+const overviewWithProgress=projectNextPanel;
+projectNextPanel=function(){return overviewWithProgress().replace('<div class="completion-metrics">',''+stageProgress()+'<div class="completion-metrics">');};
+render();
