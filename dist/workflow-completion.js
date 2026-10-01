@@ -52,3 +52,5 @@ function exportCompletionMatrix(){const rows=[["Requirement ID","Requirement","P
 const overviewBeforeAudit=projectNextPanel;
 projectNextPanel=function(){return overviewBeforeAudit().replace('</section>','<div>'+button(uxText('Decision history','承認履歴'),'viewDecisionLog()')+'</div></section>');};
 render();
+const completionMatrixPage=blueprintPageRoutes.traceability;
+blueprintPageRoutes.traceability=function(){return actionsAtTop(completionMatrixPage(),'traceability');};
